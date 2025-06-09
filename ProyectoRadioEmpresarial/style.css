@@ -1,0 +1,87 @@
+.links-navbar{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.barra-navegacion{
+    background-color: #3a0603;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.logo{
+    height:40px;
+    width: 170px;
+}
+
+section{
+    margin: 0 100px;
+    background-color: #fffbf0;
+    height: 1050px;
+    width: 85%;
+    justify-self: center;
+}
+
+h1{
+    font-size: 25px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.177);
+    margin:0 35px;
+    padding: 20px;
+    text-align: center;
+}
+
+h2{
+    font-size: 20px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.177);
+    margin-left: 35px;
+    margin-right: 75%;
+    padding: 50px 0 20px;
+}
+
+.envivo{
+    justify-self: center;
+
+}
+
+div.envivo p{
+    font-size: 30px;
+    text-align: center;
+}
+
+.btn-envivo{
+    height: 90px;
+    width: 90px;
+    display: flex;
+    justify-self: center;
+    background-color: #3a0603;
+    border: 5px solid black;
+    border-radius: 50px;
+    justify-content: center;
+    padding: 0px;
+    font-size: 50px;
+    color: white;
+    margin: 30px;
+    margin-bottom: 0px;
+}
+
+
+#link-noticia-g{
+    grid-template-columns: 35% 16% 16% 16%;
+    
+}
+
+.noticia-g{
+    background-color: #3a0603;
+    border-radius: 10px;
+    height: 500px;
+    width: 400px;
+    margin: 20px;
+}
+
+.noticia-p{
+    display: flex;
+}
