@@ -1,3 +1,7 @@
+body{
+    background-image: i;
+}
+
 .links-navbar{
     text-decoration: none;
     color: white;
@@ -21,7 +25,7 @@
 section{
     margin: 0 100px;
     background-color: #fffbf0;
-    height: 1050px;
+    height: 100%;
     width: 85%;
     justify-self: center;
 }
@@ -30,15 +34,15 @@ h1{
     font-size: 25px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.177);
     margin:0 35px;
-    padding: 20px;
+    padding: 20px;      
     text-align: center;
 }
 
 h2{
     font-size: 20px;
     border-bottom: solid 1px rgba(0, 0, 0, 0.177);
-    margin-left: 35px;
-    margin-right: 75%;
+    margin-left: 20px;
+    margin-right: 50%;
     padding: 50px 0 20px;
 }
 
@@ -68,30 +72,21 @@ div.envivo p{
     margin-bottom: 0px;
 }
 
-.noticia-g{
+.noticia-pr-g{
     background-color: #3a0603;
     border-radius: 10px;
     height: 500px;
     width: 400px;
+
 }
 
-.noticia-p{
+.noticia-pr-p{
     background-color: #3a0603;
     border-radius: 10px;
     height: 230px;
     width: 240px; 
-    gap: 100px;
-}
-
-.noticia-p1{
-    background-color: #3a0603;
-    border-radius: 10px;
-    height: 230px;
-    width: 240px; 
-    gap: 100px;
-    display: flex;
-    align-self: flex-end;
-    justify-content: flex-end;
+    gap: 100px; 
+    align-self: flex-end;   
 }
 
 .noticias-principales{
@@ -99,3 +94,20 @@ div.envivo p{
     gap: 30px;
     margin: 20px;
 }
+
+.noticias-varias{
+    display: flex;
+    gap: 30px;
+    margin: 20px;
+    justify-self    : center;
+}
+
+.noticia-vr-p{
+    background-color: #3a0603;
+    border-radius: 10px;
+    height: 230px;
+    width: 240px; 
+    gap: 100px; 
+    align-self: flex-end;   
+}
+
