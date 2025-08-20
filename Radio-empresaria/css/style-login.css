@@ -1,27 +1,143 @@
-body {
+body{
     font-family: Arial, sans-serif;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     margin: 0;
     box-sizing: border-box;
-    background-image: url("../fondo.webp");
-    background-size: cover; /* This makes the image cover the entire element */
-    background-position: center; /* This centers the image */
-    background-repeat: no-repeat; /* This prevents the image from repeating */
-    background-attachment: fixed;
+    background-color: #fffbf0;
+}
+
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.links-navbar{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.barra-navegacion{
+    background-color: #241F55;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    border: none;
+    height: 4rem;
+}
+
+.logo{
+    height: 40px;
+    width: 190px;
+    justify-content: center;
+}
+
+/*para decorar los botones que estan en la barra de navegacion*/
+.btn-nav-bar{
+    height: 45px;
+    width: 45px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.btn-nav-bar:hover{
+    background-color: rgba(255, 255, 255, 0.274);
+    border: none;
+}  
+
+.btn-nav-bar img{
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.img-a-nav{
+    color: #ffffff;
+    position: absolute;
+    transform: translate(20%, 20%);
+}    
+
+/*Clase usada para el boton con que se extiende en la barra de navegacion*/
+.btn-nav-completo{
+    background-color: #241F55;
+}
+
+.categorias-nav a{
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 1.3rem 3rem;
+    color: white;
+}    
+
+.categorias-nav a:hover{
+    background-color: rgba(255, 255, 255, 0.356);
+    transition: .2s;
+}
+
+.categorias-nav:first-of-type h4{
+    padding: 1rem 3rem;
+    border-bottom: 1px solid white;
+    font-size: 20px;
+}
+
+.categorias-nav h4{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.589);
+    padding: 0 1rem 1rem 1rem;
+    margin: 0 0.9rem;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    border-bottom-color: white;
+}
+.categorias-nav{
+    margin: 0;
+    padding: 0;
+    background-color: #241F55;
+}    
+
+.categorias-nav-header{
+    padding: 10px 10px 0 0;
+    margin: 0;
+}
+
+.contactos-nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.contactos-nav i{
+    font-size: 2.5rem;
+    position: absolute;
+    align-self: center;
+}
+
+.contactos-nav a{
+    height: 3.5rem;
+    width: 3.5rem;
+    
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+}
+
+.contactos-nav a:hover{
+    background-color: rgba(255, 255, 255, 0.356);
+    transition: .2s;
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #241F55;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     text-align: center;
+    margin-top: 5dvh;
 }
 
 .form-container {
@@ -43,34 +159,27 @@ body {
     }
 }
 
+#register-form-container h2{
+    margin-bottom: 2dvh;
+}
+
 h2 {
-    color: #333;
+    color: #ffffff;
     margin-bottom: 25px;
     font-size: 28px;
 }
 
 .form .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 2dvh;
     text-align: left;
 }
 
 .form label {
     display: block;
     margin-bottom: 8px;
-    color: #555;
+    color: white;
     font-weight: bold;
     font-size: 14px;
-}
-
-.form input[type="text"],
-.form input[type="password"],
-.form input[type="email"] {
-    width: calc(100% - 20px);
-    padding: 12px 10px;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
 }
 
 .form input[type="text"]:focus,
@@ -91,7 +200,7 @@ h2 {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     width: 100%;
-    margin-top: 10px;
+    margin-top:6dvh;
 }
 
 .form button:hover {
@@ -99,10 +208,21 @@ h2 {
     transform: translateY(-2px);
 }
 
+#register-form-container .form input[type="text"],
+#register-form-container .form input[type="password"],
+#register-form-container .form input[type="email"]{
+    height: 7%;
+}
+
+#register-form-container button{
+    margin-top: 1dvh;
+}
+
 .form p {
-    margin-top: 25px;
-    color: #666;
+    margin-top: 15px;
+    color: white;
     font-size: 14px;
+    margin-bottom: 0;
 }
 
 .form p a {
@@ -115,4 +235,21 @@ h2 {
 .form p a:hover {
     color: rgb(69, 156, 255);
     text-decoration: underline;
+}
+
+.form input[type="text"],
+.form input[type="password"],
+.form input[type="email"] {
+    width: 100%;
+    padding: 12px 10px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    border-radius: 2dvh;
+
+}
+
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback){
+    border-top-left-radius: 2dvh;
+    border-bottom-left-radius: 2dvh;
 }

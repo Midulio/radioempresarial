@@ -18,11 +18,10 @@ ol a{
 div.principal{
     width: 100%;
     height: 80dvh;
-    background: url("../fotos/mirtha.jpg") no-repeat center;
-    background-attachment: fixed;
+    background: url("../fotos/mirtha-gala.jpeg") no-repeat center;
     background-size: cover;
-    border-bottom-left-radius: 55px;
-    border-bottom-right-radius: 55px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
     align-content: end;
     overflow-y: scroll;
 }
@@ -70,6 +69,16 @@ body{
 /*Clase usada para el boton con que se extiende en la barra de navegacion*/
 .btn-nav-completo{
     background-color: #241F55;
+}
+
+.foto-principal{
+    text-align: center;
+}
+
+.foto-principal img{
+    border-radius: 4px;
+    width: 85dvh;
+    height: 65dvh;
 }
 
 .container-left
@@ -136,16 +145,52 @@ section{
     justify-self: center;
 }
 
+.text-container{
+    background: #1414147a;
+    backdrop-filter: blur(0.2rem);
+    -webkit-backdrop-filter: blur(0.6rem);
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    margin: 0 2dvh 2dvh 2dvh;
+}
+
 .principal button{
-    margin: 0 5px 0 35px;
-    background: none;
+    margin: 15px 5px 0 35px;
+    background: #2a2558;
     border-radius: 25px;
+    border: 1px;
+}
+
+.principal p{
+    margin-top: -1.5dvh;
+}
+
+.principal h3{
+    font-size: 3.5dvh;
+    margin: 2dvh 8dvh 2dvh 8dvh;
+    padding: 1px;
+    color: rgb(208, 206, 241);
+}
+
+.container-left h3{
+    font-size: 3.4dvh;
+}
+
+.text-descriptivo{
+    margin-top: -0.5dvh;
+    text-align: center;
+    font-size: 2.2dvh;
+}
+
+.text{
+    margin: 10px 100px 10px 100px;
+    font-size: 3dvh;
 }
 
 h1{
-    
-    border-bottom: 1px solid black;
-    font-size: 2rem;
+    border-bottom: 1px solid rgb(165, 165, 165);
+    font-size: 7dvh;
     margin: 0 35px;
     padding: 14px;      
     text-align: left;
@@ -154,20 +199,26 @@ h1{
 }
 
 h2{
-    font-size: 3dvh;
-    padding: 50px 0 20px;
+    font-size: 3.7dvh;
+    padding: 20px 0 20px;
     text-align: center;
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
 }
 
 h4{
     font-size: 2dvh;
-    margin: 5px;
+    letter-spacing: 0.15rem;
+    margin: 1dvh 4dvh 1dvh 4dvh;
+    color: white;
 }
 
 li{
     list-style-type: none;
     margin-top: 5px;
     margin-bottom: 5px;
+    font-size: 2.4dvh;
 }
 
 
@@ -183,89 +234,59 @@ p{
 }
 
 .barra-navegacion{
-    background-color: #1E3E62;
+    background-color: #241F55;
     padding: 0 10px;
     display: flex;
     justify-content: space-between;
     color: white;
     border: none;
-    height: 4rem;
+    height: 9dvh;
 }
 
 .logo{
-    height:40px;
-    width: 190px;
+    height:5dvh;
+    width: 25dvh;
     justify-content: center;
 }
 
-/*carrousel*/
-.carrousel{
-    margin: 0 auto ;
-    height: 400px;
-    width: 80%;
-    padding: 2em;
-    max-width: 120em;
-    color: var(--negro);
-    transition: all 0.4s ease;
-    border-radius: 1em;
-    background-color: var(--blanco);
-    box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
-    overflow: hidden;
+.img-a-nav{
+    color: #ffffff;
+    position: absolute;
+    transform: translate(20%, 20%);
 }
-.carrousel .grande-img{
-    width: 1000%;
-    height: 120%;
-    position: relative;
-    display: flex;
-    box-shadow:none;
+
+/*boton para subir*/
+.back-to-top {
+    display: none; 
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 9999;
 }
-.carrousel .grande{
-    width: 100%;
-    height: 80%;
-    overflow: hidden;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--negro);
-    transition: all 0.4s ease;
-    border-radius: 1em;
-    background-color: var(--blanco);
-    box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
-    transition: all 0.5s ease;
+
+.youtube-menu{
+    color: #FF0000;
 }
-.carrousel .img{
-    width: calc(1000% / 10);
-    height: 80%;
-    max-width: 900px;
-    padding: 1rem;
-    box-shadow: none;
+.fa-youtube{
+    color: #FF0000;
 }
-.carrousel .puntos{
-    width: 100%;
-    margin: 1em 0 0;
-    padding: .4em;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
+.fa-facebook{
+    color: #1877F2;
 }
-.carrousel .punto{
-    width: 2em;
-    height: 2em;
-    margin: 1em 1em 0;
-    color: var(--negro);
-    transition: all 0.4s ease;
-    border-radius: 1em;
-    background-color: var(--blanco);
-    box-shadow: 0.6em 0.6em 1.2em var(--sombra-ppal), -0.6em -0.6em 1.2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+.instagram-gradient {
+    font-size: 40px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 50px;
 }
-.carrousel .punto.activo{
-    background-color: lightskyblue;
+.fa-x-twitter{
+    color: #dddddd;
 }
-/* FOOTER */
-.footer-brand{
-    margin: 0 auto;
-}
-.footer-section{
-    margin-right: 0;
+.fa-telegram{
+    color: #0088CC;
 }
