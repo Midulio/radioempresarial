@@ -15,6 +15,55 @@ ol a{
 ::-webkit-scrollbar-track:active { background: #d2d2d2;}
 ::-webkit-scrollbar-corner { background: transparent;}
 
+:root {
+    --negro: #393939;
+    --blanco: #ececec;
+    --sombra-ppal: #c9c9c9;
+    --sombra-sec: #ffffff;
+    --borde-negro: #00000050;
+    --marcado: rgb(127, 195, 255);
+  /* Tipografía */
+    --tipo-principal: Helvetica, Arial, sans-serif;
+}
+:root {
+    /* Colores para el tema CLARO */
+    --color-fondo-claro: #fffbf0; /* Color de fondo principal de la sección */
+    --color-texto-claro: #000000; /* Color de texto general */
+    --color-barra-navegacion-claro: #241F55; /* Color de la barra de navegación */
+    --color-footer-claro: #222; /* Color del pie de página */
+    --color-box-claro: #1e3e62; /* Color de las cajas de noticias */
+    --color-sombra-ppal-claro: #c9c9c9; /* Sombra principal */
+    --color-sombra-sec-claro: #ffffff; /* Sombra secundaria */
+    --color-borde-negro-claro: #00000050; /* Borde oscuro */
+    --color-marcado-claro: rgb(127, 195, 255); /* Color de marcado/activo */
+    --color-footer-titulo: #FFD700;
+    --color-noticia-varias-hover-claro: #ffffff; /* Color del texto al hacer hover en noticias varias */
+}
+@media (prefers-color-scheme: dark) {
+    :root{
+    /* Colores para el tema OSCURO */
+    --color-fondo-claro: #202020; /* Fondo más oscuro */
+    --color-texto-claro: #ffffff; /* Texto claro */
+    --color-barra-navegacion-claro: #1a1a1a; /* Barra de navegación más oscura */
+    --color-footer-claro: #111; /* Pie de página muy oscuro */
+    --color-box-claro: #333333; /* Cajas de noticias más oscuras */
+    --color-sombra-ppal-claro: #1a1a1a; /* Sombras adaptadas al oscuro */
+    --color-sombra-sec-claro: #4a4a4a; /* Sombras adaptadas al oscuro */
+    --color-borde-negro-claro: #FFFFFF50; /* Borde claro */
+    --color-marcado-claro: rgb(70, 130, 180); /* Color de marcado/activo para oscuro */
+    --color-noticia-varias-hover-claro: #e0e0e0; /* Color del texto al hacer hover en noticias varias para oscuro */
+}}
+/* Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+    :root {
+    --negro: #ececec;
+    --blanco: #303030;
+    --sombra-ppal: #242424;
+    --sombra-sec: #3c3c3c;
+    --borde-negro: #FFFFFF50;
+    }
+}
+
 div.principal{
     width: 100%;
     height: 80dvh;
@@ -36,7 +85,8 @@ div p{
 }
 
 body{
-    background-image: #fafafa;
+    background-color: var(--color-fondo-claro);
+    color: var(--color-texto-claro);
     scroll-behavior:smooth;
 }
 
@@ -50,7 +100,12 @@ body{
     height: 45px;
     width: 45px;
     border-radius: 5px;
-}    
+}
+
+.btn-nav-bar img {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
 
 .img-btn-nav{
     position: absolute;
@@ -71,70 +126,71 @@ body{
     background-color: #241F55;
 }
 
-.foto-principal{
-    text-align: center;
-}
-
-.foto-principal img{
-    border-radius: 4px;
-    width: 85dvh;
-    height: 65dvh;
-}
-
-.container-left
-{
-    width: 20%;
-    float: left;
-    position: relative;
-    display: block;
-    border-right: 1px solid black;
-}
-
-.container-right{
-    width: 80%;
-    float: right;
-    position: relative;
-    display: block;
-
-}
-
 .categorias-nav a{
     display: block;
     text-decoration: none;
-    font-size: 16px;
-    padding: 1.1rem 3rem;
+    font-size: 18px;
+    padding: 1.3rem 3rem;
     color: white;
 }    
 
 .categorias-nav a:hover{
-    background-color: black;
+    background-color: rgba(255, 255, 255, 0.356);
+    transition: .2s;
 }
 
 .categorias-nav:first-of-type h4{
-    padding: 1rem;
-}
-
-.categorias-nav:last-of-type a{
-    border-top: 1px solid rgba(255, 255, 255, 0.562);
-    width: 50%;
+    padding: 1rem 3rem;
+    border-bottom: 1px solid white;
+    font-size: 20px;
 }
 
 .categorias-nav h4{
-    border-bottom: 1px solid rgba(255, 255, 255, 0.562);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.589);
     padding: 0 1rem 1rem 1rem;
     margin: 0 0.9rem;
-    font-size: 17px;
+    font-size: 20px;
     color: white;
-}    
-
+    text-align: center;
+    border-bottom-color: rgba(var(--color-texto-claro), 0.562);
+}
 .categorias-nav{
     margin: 0;
     padding: 0;
+    background-color: var(--color-barra-navegacion-claro);
 }    
+
 
 .categorias-nav-header{
     padding: 10px 10px 0 0;
     margin: 0;
+}
+
+.contactos-nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    background-color: var(--color-barra-navegacion-claro);
+}
+
+.contactos-nav i{
+    font-size: 2.5rem;
+    position: absolute;
+    align-self: center;
+}
+
+.contactos-nav a{
+    height: 3.5rem;
+    width: 3.5rem;
+    
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+}
+
+.contactos-nav a:hover{
+    background-color: rgba(255, 255, 255, 0.356);
+    transition: .2s;
 }
 
 section{
@@ -143,6 +199,32 @@ section{
     height: 100%;
     width: 95%;
     justify-self: center;
+}
+
+.container-left
+{
+    width: 15%;
+    float: left;
+    position: relative;
+    display: block;
+    border-right: 1px solid black;
+}
+
+.container-right{
+    width: 85%;
+    float: right;
+    position: relative;
+    display: block;
+
+}
+
+.foto-principal{
+    text-align: center;
+}
+
+.foto-principal img{
+    width: 80dvh;
+    border-radius: 0.4rem;
 }
 
 .text-container{
@@ -177,6 +259,9 @@ section{
     font-size: 3.4dvh;
 }
 
+.container-left a{
+    color: var(--color-texto-claro);
+}
 .text-descriptivo{
     margin-top: -0.5dvh;
     text-align: center;
@@ -234,7 +319,7 @@ p{
 }
 
 .barra-navegacion{
-    background-color: #241F55;
+    background-color: var(--color-barra-navegacion-claro);
     padding: 0 10px;
     display: flex;
     justify-content: space-between;

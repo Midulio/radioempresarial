@@ -1,7 +1,6 @@
 @charset "UTF-8";
 /* Aquí definimos las Custom properties */
 
-/*
 ::-webkit-scrollbar { width: 0px; height: 9px;}
 ::-webkit-scrollbar-button { width: 0px; height: 0px;}
 ::-webkit-scrollbar-thumb { background: transparent; border: 0px none #fff; border-radius: 10px;}
@@ -11,7 +10,6 @@
 ::-webkit-scrollbar-track:hover { background: #e4e4e4;}
 ::-webkit-scrollbar-track:active { background: #d2d2d2;}
 ::-webkit-scrollbar-corner { background: transparent;}
-*/
 
 :root {
     --negro: #393939;
@@ -76,15 +74,6 @@ section{
     width: 85%;
     justify-self: center;
 }
-@media screen and (max-width: 768px) {
-    section{
-        width: 100%;
-    }
-
-    .envivo{
-        width: 30rem;
-    }
-}
 
 h1{
     font-size: 25px;
@@ -127,7 +116,7 @@ h4{
     padding: 5px;
     height: 20rem;
     margin-top: 1rem;
-    width: 75%;
+    width: 80%;
     justify-content: center;
     justify-items: center;
 }
@@ -159,12 +148,12 @@ h4{
     justify-content: space-between;
     color: var(--color-texto-claro);
     border: none;
-    height: 4rem;
+    height: 9dvh;
 }
 
 .logo{
-    height:40px;
-    width: 190px;
+    height: 5dvh;
+    width: 25dvh;
     justify-content: center;
 }
 
@@ -174,24 +163,83 @@ div.envivo p{
 }
 
 /*NOTICIAS PRINCIPALES*/
+
+.noticia-principal{
+    border-radius: 0.3cm;
+    height: 100%;
+    overflow: auto;
+    color: black;
+    background-color: #241F55;
+}
+
+.noticia:hover{
+    transform: scale(1.02);
+}
+
 .text-box{
     width: 100%;
 }
 
-.noticia-principal-mini{
-    height: 80%;
-    float: left;
+.noticia-principal-mini {
+    width: 100%;
+    height: 100%;
+    background-color: #1e3e62;
+    display: flex;
+    overflow: hidden;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    align-items: center;
+    gap: 1rem;
+    box-sizing: border-box;
 }
 
+/*Espaciado entre las noticias principales chicas*/
+.stacked-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 1rem; /* Espacio entre tarjetas */
+}
 
+.noticia-principal-mini img {
+    height: 100%;
+    width: auto;
+    max-width: 30%;
+    object-fit: cover;
+}
+
+.noticia-principal-mini p{
+    color: white;
+    font-size: 22px;
+    margin: 1.2rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+    word-break: break-word; 
+}
+
+.noticia-principal-mini:hover{
+    transform: scale(1.01);
+    transition: .2s ease; 
+}
 
 /* NOTICIAS VARIAS */
 .oculta{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+/* .oculta{
     display: none;
     opacity: 0;
     transition: opacity 2s ease;
-}
-
+} */
+/* 
 .mensaje:hover .oculta{
     display: flex;
     min-height: 100%;
@@ -199,40 +247,46 @@ div.envivo p{
     border-radius: 2%;
     align-items: center;
     opacity: 1;
+} */
+
+.mensaje img{
+    display: flex;
+    height: 16rem;
+    max-width: fit-content;   /*REVISAR TIZI    de:TIZI*/
+    position: absolute;
 }
 
-.mensaje:hover img{
+/* .mensaje:hover img{
     float: left;
     width: 55%;
     height: 100%;
-}   
+}   */
 
-.mensaje img{
-    display: flex;    
-}
+
 
 article .noticia a{
     box-shadow: 2px 2px 6px var(--color-borde-negro-claro); 
-    border-radius: 3%;
-    max-height: fit-content;
+    height: 16rem;
     text-decoration: none;
     transition: background-color 1s ease;
 }
 
-article .noticia a:hover{
+/* article .noticia a:hover{
     background-color: #241F55;
-}
+    overflow: hidden;
+} */
 
 .noticia{
     display: flex;
     margin: auto;
 }
 
+/*para decorar los botones que estan en la barra de navegacion*/
+
 .navbar-toggler{
     background-color: white;
 }    
 
-/*para decorar los botones que estan en la barra de navegacion*/
 .btn-nav-bar{
     height: 45px;
     width: 45px;
@@ -305,6 +359,7 @@ article .noticia a:hover{
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
+    background-color: var(--color-barra-navegacion-claro);
 }
 
 .contactos-nav i{
@@ -327,19 +382,6 @@ article .noticia a:hover{
     transition: .2s;
 }
 /*para las noticias en general*/
-.box {
-    border-radius: 0.3cm;
-    height: 40dvh;
-    overflow: auto;
-    color: black;
-    background-color: #241F55;
-}       
-
-.big-box {
-    height: 100%;
-    width: 550px;
-}
-
 .small-box {
     height: 39.9dvh;
 }
@@ -398,8 +440,8 @@ article .noticia a:hover{
     color: var(--negro);
     transition: all 0.4s ease;
     border-radius: 1em;
-    background-color: var(--blanco);
-    box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+    background-color: var(--balnco);
+    box-shadow: 1em 1em 20em var(--sombra-ppal), -1em -1em 20em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
     transition: all 0.5s ease;
 }
 .carrousel .img{
@@ -422,11 +464,11 @@ article .noticia a:hover{
     width: 2em;
     height: 2em;
     margin: 1em 1em 0;
-    color: var(--color-texto-claro);
+    color: var(--color-fondo-claro);
     transition: all 0.4s ease;
     border-radius: 1em;
-    background-color: var(--color-fondo-claro);
-    box-shadow: 0.6em 0.6em 1.2em var(--color-sombra-ppal-claro), -0.6em -0.6em 1.2em var(--color-sombra-sec-claro), inset 0 0 0 transparent, inset 0 0 0 transparent;
+    background-color: var(--color-texto-claro);
+    box-shadow: 0.1em 0.2em 1.2em var(--color-sombra-ppal-claro), -0.6em -0.6em 1.2em var(--color-sombra-sec-claro), inset 0 0 0 transparent, inset 0 0 0 transparent;
 }
 .carrousel .punto.activo{
     background-color: lightskyblue;
@@ -591,8 +633,47 @@ article .noticia a:hover{
 .footer-bottom-contacto{
     display: flex;
 }
-/*version responsiva del footer*/
+
 @media (max-width: 768px) {
+
+section{
+    margin: 0 0 0 0;
+    width: 100%;
+}
+
+h1{
+    font-size: 3.5dvh;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.664);
+    margin:0 15px;
+    padding: 10px;
+}
+
+.mx-3{
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.envivo{
+    padding: 5px;
+    height: 12rem;
+    width: 90%;
+}
+
+.btn-envivo{
+    height: 60px;
+    width: 60px;
+    color: white;
+    margin: 0.9em;
+}
+
+div.envivo p{
+    font-size: 4dvh;
+    margin: -2.4em;
+}
+
+
+
+/*version responsiva del footer*/  
 .div-conteiner {
     flex-direction: column;
     align-items: center;
