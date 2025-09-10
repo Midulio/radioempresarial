@@ -1,0 +1,641 @@
+@charset "UTF-8";
+/* Aquí definimos las Custom properties */
+
+ol a{
+    text-decoration: none;    
+}
+
+::-webkit-scrollbar { width: 0px; height: 9px;}
+::-webkit-scrollbar-button { width: 0px; height: 0px;}
+::-webkit-scrollbar-thumb { background: transparent; border: 0px none #fff; border-radius: 10px;}
+::-webkit-scrollbar-thumb:hover { background: #3a77a1;}
+::-webkit-scrollbar-thumb:active { background: #8dd0d8;}
+::-webkit-scrollbar-track {background: transparent;border: 0px solid #aaa; border-radius: 5px;}
+::-webkit-scrollbar-track:hover { background: #e4e4e4;}
+::-webkit-scrollbar-track:active { background: #d2d2d2;}
+::-webkit-scrollbar-corner { background: transparent;}
+
+:root {
+    --negro: #393939;
+    --blanco: #ececec;
+    --sombra-ppal: #c9c9c9;
+    --sombra-sec: #ffffff;
+    --borde-negro: #00000050;
+    --marcado: rgb(127, 195, 255);
+  /* Tipografía */
+    --tipo-principal: Helvetica, Arial, sans-serif;
+}
+:root {
+    /* Colores para el tema CLARO */
+    --color-fondo-claro: #fffbf0; /* Color de fondo principal de la sección */
+    --color-texto-claro: #000000; /* Color de texto general */
+    --color-barra-navegacion-claro: #241F55; /* Color de la barra de navegación */
+    --color-footer-claro: #222; /* Color del pie de página */
+    --color-box-claro: #1e3e62; /* Color de las cajas de noticias */
+    --color-sombra-ppal-claro: #c9c9c9; /* Sombra principal */
+    --color-sombra-sec-claro: #ffffff; /* Sombra secundaria */
+    --color-borde-negro-claro: #00000050; /* Borde oscuro */
+    --color-marcado-claro: rgb(127, 195, 255); /* Color de marcado/activo */
+    --color-footer-titulo: #FFD700;
+    --color-noticia-varias-hover-claro: #ffffff; /* Color del texto al hacer hover en noticias varias */
+}
+@media (prefers-color-scheme: dark) {
+    :root{
+    /* Colores para el tema OSCURO */
+    --color-fondo-claro: #202020; /* Fondo más oscuro */
+    --color-texto-claro: #ffffff; /* Texto claro */
+    --color-barra-navegacion-claro: #1a1a1a; /* Barra de navegación más oscura */
+    --color-footer-claro: #111; /* Pie de página muy oscuro */
+    --color-box-claro: #333333; /* Cajas de noticias más oscuras */
+    --color-sombra-ppal-claro: #1a1a1a; /* Sombras adaptadas al oscuro */
+    --color-sombra-sec-claro: #4a4a4a; /* Sombras adaptadas al oscuro */
+    --color-borde-negro-claro: #FFFFFF50; /* Borde claro */
+    --color-marcado-claro: rgb(70, 130, 180); /* Color de marcado/activo para oscuro */
+    --color-noticia-varias-hover-claro: #e0e0e0; /* Color del texto al hacer hover en noticias varias para oscuro */
+}}
+/* Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+    :root {
+    --negro: #ececec;
+    --blanco: #303030;
+    --sombra-ppal: #242424;
+    --sombra-sec: #3c3c3c;
+    --borde-negro: #FFFFFF50;
+    }
+}
+body{
+    background-color: var(--color-fondo-claro);
+    color: var(--color-texto-claro);
+    scroll-behavior: smooth;
+}
+
+
+h1{
+    font-size: 4.6dvh;
+    padding: 20px;      
+    text-align: center;
+    color: var(--color-texto-claro);
+}
+
+.foto-principal{
+    text-align: center;
+}
+
+.foto-principal img{
+    border-radius: 4px;
+    width: 85dvh;
+    height: 65dvh;
+}
+
+section{
+    margin-bottom: 3rem;
+    background-color: var(--color-fondo-claro);
+    height: 100%;
+    width: 100%;
+    justify-self: center;
+}
+
+.noticia-box{
+    margin-top: 6dvh;
+    border-radius: 0.3cm;
+}
+
+.noticia-box a{
+    text-decoration: none;
+    color:var(--color-texto-claro);
+}
+
+.noticia-box a:hover{
+    color:rgb(27, 18, 114);
+}
+
+.img-noticia a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.img-noticia a:hover{
+    color: #FFFFFF;
+}
+
+.img-noticia{
+    width: 100%;
+    height: 35dvh;
+    border-radius: 0.4cm;
+    background: url("../fotos/WhatsApp\ Image\ 2025-08-11\ at\ 11.06.00\ \(1\).jpeg") no-repeat center;
+    background-size: cover;
+    align-content: end;
+}
+
+.text-noticia{
+    margin: 8px 0.5px 4px 0.5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 2.6dvh;
+    border-top: 1px solid var(--color-texto-claro);
+}
+
+button{
+    margin: 1px 1px 1px 1px;
+    background: #2a2558;
+    border-radius: 6px;
+    border: 1px;
+}
+
+button.back-to-top{
+    background: #ffffff;
+}
+
+.container-left
+{
+    width: 15%;
+    float: left;
+    position: relative;
+    display: block;
+    border-right: 1px solid var(--color-texto-claro);
+    margin-top: 4dvh;
+}
+
+.container-right{
+    width: 85%;
+    float: right;
+    position: relative;
+    display: block;
+
+}
+
+.categorias-nav a{
+    display: block;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 1.1rem 3rem;
+    color: white;
+}    
+
+
+.categorias-nav:first-of-type h4{
+    padding: 1rem;
+}
+
+.categorias-nav:last-of-type a{
+    border-top: 1px solid rgba(255, 255, 255, 0.562);
+    width: 50%;
+}
+
+.categorias-nav h4{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.562);
+    padding: 0 1rem 1rem 1rem;
+    margin: 0 0.9rem;
+    font-size: 17px;
+    color: white;
+}    
+
+.categorias-nav{
+    margin: 0;
+    padding: 0;
+}    
+
+.categorias-nav-header{
+    padding: 10px 10px 0 0;
+    margin: 0;
+}
+
+.noticia-box h4{
+    font-size: 1.5dvh;
+    letter-spacing: 0.15rem;
+    margin: 1dvh 1dvh 1dvh 1dvh;
+    color: white;
+}
+
+.container-left li{
+    list-style-type: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    border-bottom: 1px dotted black;
+}
+
+.container-left a{
+    color: var(--color-texto-claro);
+}
+
+.container-left h3{
+    font-size: 3.4dvh;
+}
+
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.links-navbar{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.barra-navegacion{
+    background-color: var(--color-barra-navegacion-claro);
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-texto-claro);
+    border: none;
+    height: 9dvh;
+}
+
+.logo{
+    height: 5dvh;
+    width: 25dvh;
+    justify-content: center;
+}
+.navbar-toggler{
+    background-color: white;
+}    
+
+/*para decorar los botones que estan en la barra de navegacion*/
+.btn-nav-bar{
+    height: 45px;
+    width: 45px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.btn-nav-bar:hover{
+    background-color: rgba(255, 255, 255, 0.274);
+    border: none;
+}  
+
+.btn-nav-bar img{
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.img-a-nav{
+    color: #ffffff;
+    position: absolute;
+    transform: translate(20%, 20%);
+}    
+
+/*Clase usada para el boton con que se extiende en la barra de navegacion*/
+.btn-nav-completo{
+    background-color: #241F55;
+}
+
+.categorias-nav a{
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 1.3rem 3rem;
+    color: white;
+}    
+
+.categorias-nav a:hover{
+    background-color: rgba(255, 255, 255, 0.356);
+    transition: .2s;
+}
+
+.categorias-nav:first-of-type h4{
+    padding: 1rem 3rem;
+    border-bottom: 1px solid white;
+    font-size: 20px;
+}
+
+.categorias-nav h4{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.589);
+    padding: 0 1rem 1rem 1rem;
+    margin: 0 0.9rem;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    border-bottom-color: rgba(var(--color-texto-claro), 0.562);
+}
+.categorias-nav{
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-barra-navegacion-claro);
+}    
+
+
+.categorias-nav-header{
+    padding: 10px 10px 0 0;
+    margin: 0;
+}
+
+.contactos-nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    background-color: var(--color-barra-navegacion-claro);
+}
+
+.contactos-nav i{
+    font-size: 2.5rem;
+    position: absolute;
+    align-self: center;
+}
+
+.contactos-nav a{
+    height: 3.5rem;
+    width: 3.5rem;
+    
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+}
+
+.contactos-nav a:hover{
+    background-color: rgba(255, 255, 255, 0.356);
+    transition: .2s;
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 3rem;
+    background-color: var(--color-footer-claro); /* Usa la variable */
+    color: #ececec;
+    clear: both;
+    padding: 1rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.div-conteiner {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.footer h4{
+    color: var(--color-footer-titulo);
+    font-size: 25px;
+}
+
+.footer-section .footer-brand {
+    flex: 1;
+    min-width: 200px;
+}
+
+.izquierda {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.izquierda p{
+    margin: 0;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+.redes ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.redes h4 {
+    margin: 0 0 8px 0;
+}
+
+.centro {
+    text-align: center;
+}
+
+.derecha {
+    text-align: center;
+}
+
+.derecha p{
+    text-align: justify;
+    color: white;
+}
+
+.footer-logo{
+    width: 300px;
+}
+.footer-span{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.footer-bottom {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    padding-top: 2rem;
+    border-top: 1px solid; /* Ajusta el color del borde si es necesario */
+    border-top-color: var(--color-borde-negro-claro); /* Ajusta el color del borde si es necesario */
+    color: var(--color-noticia-varias-hover-claro); /* Un gris más suave para el texto pequeño */
+
+}
+.footer-bottom .footer-bottom-p{
+    text-align: center;
+}
+.footer-bottom-p a{
+    text-decoration: none;
+}
+.footer-bottom-ul{
+    display: contents;
+}
+.footer-bottom-ul li{
+    align-items:start;
+    display:contents;
+}
+.footer-bottom-ul a{
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #FFF; /* Un gris más suave para los enlaces */
+    text-align: start;
+    display: contents;
+}
+
+.footer p{
+    color: #FFFFFF;
+}
+/*footer secciones*/
+.footer-ul-li a{
+    text-decoration: none;
+    color: #FFF; /* Usa la variable */
+    text-align: start;
+    display: block;
+    font-size: 20px;
+    list-style-type: none;
+}
+
+.footer-ul-li{
+    list-style-type: none;
+}
+
+/*footer redes*/
+.youtube-menu{
+    color: #FF0000;
+}
+.fa-youtube{
+    color: #FF0000;
+}
+.fa-facebook{
+    color: #1877F2;
+}
+.instagram-gradient {
+    font-size: 40px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 50px;
+}
+.fa-x-twitter{
+    color: #dddddd;
+}
+.fa-telegram{
+    color: #0088CC;
+}
+/*footer contacto*/
+.footer-a-contacto{
+    display: block;
+    text-align: start;
+    text-decoration: none;
+    color: #ffffff; /* Usa la variable */
+}
+.fa-envelope{
+    color: #ffffff;
+}
+.fa-circle-info{
+    color: #ffffff;
+}
+.fa-square-phone{
+    color:#1877F2;
+}
+.fa-linkedin{
+    color: #1877F2;
+}
+.fa-location-dot{
+    color:#c70b0b;
+}
+.fa-whatsapp{
+    color: #4FCE5D;
+    color: #075E54;
+}
+/*footer contacto*/
+.footer-bottom-contacto{
+    display: flex;
+}
+/*version responsiva del footer*/
+@media (max-width: 768px) {
+.div-conteiner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-section, .footer-brand {
+    width: 100%;
+    max-width: 500px;
+}
+
+.izquierda,.derecha {
+    align-items: center;
+    text-align: center;
+}
+
+.redes ul {
+    justify-content: center;
+}
+
+.footer-section a, .footer-section p {
+    font-size: 16px;
+}
+
+.footer-section i {
+    font-size: 24px;
+}
+
+
+}
+@media (max-width: 550px){
+
+h1{
+    font-size: 3.3dvh;
+    margin: -10 px 0 -5px
+}
+
+.container-left
+{
+    align-content: right;
+    display: block;
+    background: #afafaf40;
+    backdrop-filter: blur(0.9rem);
+    -webkit-backdrop-filter: blur(0.9rem);
+    border: 1px solid rgba(255, 249, 249, 0.61);
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.384);
+    margin-top: 0;
+    overflow-y: scroll;
+    width: 100%;
+    height: 12rem;
+    border-radius: 10px;
+}
+
+
+.container-left li{
+    list-style-type: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 2.2dvh;
+    border-bottom: none;
+}
+
+.container-left h3{
+    font-size: 2.7dvh;
+}
+
+.container-right{
+    width: 100%;
+    float: right;
+    position: relative;
+    display: block;
+}
+}
+
+/*boton para subir*/
+.back-to-top {
+    display: none; 
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: 1px solid black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.youtube-menu{
+    color: #FF0000;
+}
+.fa-youtube{
+    color: #FF0000;
+}
+.fa-facebook{
+    color: #1877F2;
+}
+.instagram-gradient {
+    font-size: 40px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 50px;
+}
+.fa-x-twitter{
+    color: #dddddd;
+}
+.fa-telegram{
+    color: #0088CC;
+}
