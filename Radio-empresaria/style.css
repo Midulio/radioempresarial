@@ -229,11 +229,40 @@ div.envivo p{
 }
 
 /* NOTICIAS VARIAS */
-.oculta{
+
+.clamp-text {
+      display: -webkit-box;
+      -webkit-line-clamp: 3; /* Limita a 3 líneas */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+.noticias-varias .card{
+    width: 15rem;
+    height: 15rem;
+    margin: 0;
+    padding: 0;
+    box-shadow: 2px 2px 6px var(--color-borde-negro-claro);
+}
+
+.noticias-varias .card img{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+}
+
+.noticias-varias .card:hover img{
+    /* filter: blur(1.5px); */
+    filter: brightness(0.4);
+}
+
+/* .oculta{
     display: flex;
     position: relative;
     justify-content: center;
-}
+} */
 /* .oculta{
     display: none;
     opacity: 0;
@@ -249,12 +278,13 @@ div.envivo p{
     opacity: 1;
 } */
 
-.mensaje img{
+/* .mensaje img{
     display: flex;
     height: 16rem;
-    max-width: fit-content;   /*REVISAR TIZI    de:TIZI*/
+    object-fit: cover;
+    max-width: 100%;
     position: absolute;
-}
+} */
 
 /* .mensaje:hover img{
     float: left;
@@ -264,12 +294,13 @@ div.envivo p{
 
 
 
-article .noticia a{
+/* article .noticia a{
     box-shadow: 2px 2px 6px var(--color-borde-negro-claro); 
     height: 16rem;
+    width: 16rem;
     text-decoration: none;
     transition: background-color 1s ease;
-}
+} */
 
 /* article .noticia a:hover{
     background-color: #241F55;
